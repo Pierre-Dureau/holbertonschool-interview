@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 """Determines if all the boxes can be opened"""
 
+import sys
+sys.setrecursionlimit(1001)
+
 
 def unlock(boxes, box_opened, tab):
     """Unlock boxes recursively"""
     for n in box_opened:
-        if (tab[n] is True):
-            return
+        if (n >= len(tab) or tab[n] is True):
+            continue
         tab[n] = True
         unlock(boxes, boxes[n], tab)
 
