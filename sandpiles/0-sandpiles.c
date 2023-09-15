@@ -26,8 +26,10 @@ static void print_grid(int grid[3][3])
 */
 static bool is_stable(int grid[3][3])
 {
-    for (size_t i = 0; i < 3; i++)
-        for (size_t j = 0; j < 3; j++)
+    size_t i, j;
+
+    for (i = 0; i < 3; i++)
+        for (j = 0; j < 3; j++)
         {
             if (grid[i][j] > 3)
                 return false;
@@ -41,8 +43,10 @@ static bool is_stable(int grid[3][3])
 */
 static void copy_grid(int grid[3][3], int gridcopy[3][3])
 {
-    for (size_t i = 0; i < 3; i++)
-        for (size_t j = 0; j < 3; j++)
+    size_t i, j;
+
+    for (i = 0; i < 3; i++)
+        for (j = 0; j < 3; j++)
             gridcopy[i][j] = grid[i][j];
 }
 
@@ -53,11 +57,12 @@ static void copy_grid(int grid[3][3], int gridcopy[3][3])
 */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-    for (size_t i = 0; i < 3; i++)
-        for (size_t j = 0; j < 3; j++)
-            grid1[i][j] += grid2[i][j];
-
+    int i, j;
     int gridcopy[3][3];
+
+    for (i = 0; i < 3; i++)
+        for (j = 0; j < 3; j++)
+            grid1[i][j] += grid2[i][j];
 
     while (!is_stable(grid1))
     {
@@ -65,8 +70,8 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
         printf("=\n");
         print_grid(grid1);
 
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
+        for (i = 0; i < 3; i++)
+            for (j = 0; j < 3; j++)
             {
                 if (gridcopy[i][j] > 3)
                 {
