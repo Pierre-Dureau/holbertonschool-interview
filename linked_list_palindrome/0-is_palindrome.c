@@ -9,12 +9,12 @@
  */
 int is_palindrome(listint_t **head)
 {
-	if (!*head)
-		return 1;
-
 	int array[4096];
 	listint_t *node = *head;
 	size_t i, j;
+
+	if (!*head)
+		return 1;
 
 	for (i = 0; node; i++, node = node->next)
 		array[i] = node->n;
