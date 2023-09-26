@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Reads stdin line by line and computes metrics
-"""
+"""Module that reads stdin line by line and computes metrics"""
 import sys
 import signal
 
@@ -19,6 +17,7 @@ status_code = {
 count = 0
 size = 0
 
+
 def print_stats():
     """Print the stats each 10 lines"""
     print(f"File size: {size}")
@@ -26,10 +25,12 @@ def print_stats():
         if (v != 0):
             print(f"{k}: {v}")
 
+
 def signal_handler(sig, frame):
     """Handle Ctrl + C"""
     print_stats()
     sys.exit(0)
+
 
 signal.signal(signal.SIGINT, signal_handler)
 
