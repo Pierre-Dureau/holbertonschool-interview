@@ -30,7 +30,7 @@ def print_stats():
     print("File size: {}".format(size))
     for k,v in status_code.items():
         if (v != 0):
-            print(f"{k}: {v}")
+            print("{:s}: {:d}".format(k, v))
 
 
 signal.signal(signal.SIGINT, signal_handler)
