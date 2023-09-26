@@ -6,18 +6,18 @@ import sys
 import signal
 
 
-stats = {
-    '200': 0,
-    '301': 0,
-    '400': 0,
-    '401': 0,
-    '403': 0,
-    '404': 0,
-    '405': 0,
-    '500': 0
+status_code = {
+    "200": 0,
+    "301": 0,
+    "400": 0,
+    "401": 0,
+    "403": 0,
+    "404": 0,
+    "405": 0,
+    "500": 0
 }
 count = 0
-file_size = 0
+size = 0
 
 
 def signal_handler(sig, frame):
@@ -27,8 +27,8 @@ def signal_handler(sig, frame):
 
 def print_infos():
     """Prints the stats obtained from the file"""
-    print("File size: {}".format(file_size))
-    for key, value in sorted(stats.items()):
+    print("File size: {}".format(size))
+    for key, value in sorted(status_code.items()):
         if value != 0:
             print("{:s}: {:d}".format(key, value))
 
@@ -40,10 +40,10 @@ for line in sys.stdin:
     length_line = len(line_parsed)
     if length_line < 2:
         continue
-    file_size += int(line_parsed[length_line - 1])
-    if line_parsed[length_line - 2] not in stats.keys():
+    size += int(line_parsed[length_line - 1])
+    if line_parsed[length_line - 2] not in status_code.keys():
         continue
-    stats[line_parsed[length_line - 2]] += 1
+    status_code[line_parsed[length_line - 2]] += 1
     if count % 10 == 0:
         print_infos()
 print_infos()
