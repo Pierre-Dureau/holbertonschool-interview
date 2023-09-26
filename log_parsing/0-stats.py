@@ -2,9 +2,9 @@
 """
 Reads stdin line by line and computes metrics
 """
-
 import sys
 import signal
+
 
 status_code = {
   "200": 0,
@@ -20,12 +20,14 @@ count = 0
 size = 0
 
 def print_stats():
+    """Print the stats each 10 lines"""
     print(f"File size: {size}")
     for k,v in status_code.items():
         if (v != 0):
             print(f"{k}: {v}")
 
 def signal_handler(sig, frame):
+    """Handle Ctrl + C"""
     print_stats()
     sys.exit(0)
 
