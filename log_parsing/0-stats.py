@@ -27,10 +27,10 @@ def signal_handler(sig, frame):
 
 def print_stats():
     """Prints the stats obtained from the file"""
-    print("File size: {}".format(size))
-    for key, value in sorted(status_code.items()):
-        if value != 0:
-            print("{:s}: {:d}".format(key, value))
+    print(f"File size: {size}")
+    for k,v in status_code.items():
+        if (v != 0):
+            print(f"{k}: {v}")
 
 
 signal.signal(signal.SIGINT, signal_handler)
