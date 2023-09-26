@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module reading stdin and computing metrics"""
+"""
+Module that reads stdin line by line and computes metrics
+"""
 import signal
 import sys
 
