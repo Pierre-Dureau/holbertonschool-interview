@@ -22,10 +22,10 @@ size = 0
 
 def signal_handler(sig, frame):
     """Handle when CTRL + C is pressed"""
-    print_infos()
+    print_stats()
 
 
-def print_infos():
+def print_stats():
     """Prints the stats obtained from the file"""
     print("File size: {}".format(size))
     for key, value in sorted(status_code.items()):
@@ -45,5 +45,4 @@ for line in sys.stdin:
         continue
     status_code[line_parsed[length_line - 2]] += 1
     if count % 10 == 0:
-        print_infos()
-print_infos()
+        print_stats()
