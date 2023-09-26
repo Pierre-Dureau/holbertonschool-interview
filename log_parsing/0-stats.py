@@ -2,8 +2,8 @@
 """
 Module that reads stdin line by line and computes metrics
 """
-import signal
 import sys
+import signal
 
 
 stats = {
