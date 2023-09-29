@@ -44,3 +44,4 @@ for line in sys.stdin:
 
     if (count % 10 == 0):
         print_stats()
+print_stats()
