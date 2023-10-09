@@ -7,9 +7,9 @@
  * Return: The int inversed
  */
 
-unsigned long int inverse_int(unsigned long n)
+unsigned long inverse_int(unsigned long n)
 {
-	int temp = 0;
+	unsigned long temp = 0;
 
 	while (n > 0)
 	{
