@@ -3,11 +3,11 @@
 /**
  * inverse_int - Inverse an int
  *
- * @n: unsigned int
+ * @n: unsigned long int
  * Return: The int inversed
  */
 
-unsigned int inverse_int(unsigned long n)
+unsigned long int inverse_int(unsigned long n)
 {
 	int temp = 0;
 
@@ -23,7 +23,7 @@ unsigned int inverse_int(unsigned long n)
 /**
  * is_palindrome - Check if an int is a palindrome
  *
- * @n: unsigned int
+ * @n: unsigned long int
  * Return: 1 if yes, 0 otherwise
  */
 
