@@ -35,7 +35,6 @@ def validUTF8(data):
 def count_consecutive_ones(n):
     """Count the number of 1 at the start of an int"""
     binary_representation = bin(n)[2:].zfill(8)
-    print(binary_representation)
     count = 0
 
     for bit in binary_representation:
