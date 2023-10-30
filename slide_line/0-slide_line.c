@@ -16,7 +16,7 @@ int slide_line(int *line, size_t size, int direction)
 		return (slide_left(line, size));
 }
 
-int slide_right(int *line, size_t size)
+int slide_left(int *line, size_t size)
 {
 	size_t i = 0;
 	int place = 0, first = 1;
@@ -35,27 +35,26 @@ int slide_right(int *line, size_t size)
 		{
 			if (line[place] == line[i])
 			{
-				line[i] *= 2;
-				line[place] = 0;
+				line[place] *= 2;
+				line[i] = 0;
 				first = 1;
 			}
 			else
 				place = i;
 		}
 	}
-	return (reorder(line, size, SLIDE_RIGHT));
+	return (reorder(line, size, SLIDE_LEFT));
 }
 
-int slide_left(int *line, size_t size)
+int slide_right(int *line, size_t size)
 {
 	size_t i = 0;
 	int place = 0, first = 1;
 
 	for (i = size - 1;; i--)
 	{
-		if (line[i] == 0)
+		if (line[i] == 0 && i != 0)
 			continue;
-
 		if (first == 1)
 		{
 			place = i;
@@ -65,8 +64,8 @@ int slide_left(int *line, size_t size)
 		{
 			if (line[place] == line[i])
 			{
-				line[i] *= 2;
-				line[place] = 0;
+				line[place] *= 2;
+				line[i] = 0;
 				first = 1;
 			}
 			else
@@ -75,7 +74,7 @@ int slide_left(int *line, size_t size)
 		if (i == 0)
 			break;
 	}
-	return (reorder(line, size, SLIDE_LEFT));
+	return (reorder(line, size, SLIDE_RIGHT));
 }
 
 int reorder(int *line, size_t size, int direction)
@@ -97,7 +96,6 @@ int reorder(int *line, size_t size, int direction)
 					{
 						line[j] = line[i];
 						line[i] = 0;
-						count_place--;
 						break;
 					}
 				}
@@ -118,7 +116,6 @@ int reorder(int *line, size_t size, int direction)
 					{
 						line[j] = line[i];
 						line[i] = 0;
-						count_place--;
 						break;
 					}
 				}
