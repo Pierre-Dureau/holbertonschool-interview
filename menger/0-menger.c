@@ -1,5 +1,10 @@
 #include "menger.h"
 
+/**
+ * menger - Entry point
+ *
+ * @level: level of the Menger Sponge to draw
+ */
 void menger(int level)
 {
 	int size = pow(3, level), i, j;
@@ -15,14 +20,22 @@ void menger(int level)
 	}
 }
 
+/**
+ * IsEmpty - check if a place is part of the menger sponge
+ *
+ * @x: Coordinate
+ * @y: Coordinate
+ *
+ * Return: 1 if empty
+ */
 int IsEmpty(int x, int y)
 {
 	while (x > 0 || y > 0)
 	{
 		if (x % 3 == 1 && y % 3 == 1)
-			return 1;
+			return (1);
 		x /= 3;
 		y /= 3;
 	}
-	return 0;
+	return (0);
 }
