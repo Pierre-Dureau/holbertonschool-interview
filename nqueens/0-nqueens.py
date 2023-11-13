@@ -31,7 +31,7 @@ def printSolution(mat):
         j = 0
         while(j < len(mat)):
             if (mat[i][j] == 'Q'):
-                print(f"[{i}, {j}]", end="")
+                print("[{}, {}]".format(i, j), end="")
                 if (i + 1 != len(mat)):
                     print(", ", end="")
             j += 1
