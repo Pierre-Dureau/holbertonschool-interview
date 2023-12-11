@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+""" Rain Module """
 
 def rain(walls):
+    """return how many square units of water will be retained after it rains"""
     water = 0
     j = 0
     space = 0
