@@ -13,7 +13,7 @@ def rain(walls):
 
     for i in range(1, length):
         if (walls[i] >= walls[i - 1]) and (i == length - 1 or
-                                          walls[i] > walls[i + 1]):
+                                           walls[i] > walls[i + 1]):
             height = walls[j] if walls[j] < walls[i] else walls[i]
             for k in range(j + 1, i):
                 water += height - walls[k]
