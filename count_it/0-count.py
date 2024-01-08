@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-Module to count the occurrences of words in the titles of hot posts
+Module 0-count
 """
 import requests
 
 
 def count_words(subreddit, word_list, count={}, after=None):
-    """ Queries the Reddit API, parses the title of all hot articles,
-    and prints a sorted count of given keywords """
+    """
+    Queries the Reddit API, parses the title of all hot articles,
+    and prints a sorted count of given keywords
+    """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {"User-Agent": "MonScriptPython/1.0"}
     params = {'after': after} if after else {}
