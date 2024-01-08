@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 0-count
+Module to count the occurrences of words in the titles of hot posts
 """
 import requests
 
