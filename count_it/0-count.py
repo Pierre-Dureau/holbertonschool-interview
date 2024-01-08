@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Module 0-count """
+"""
+Module 0-count
+"""
 import requests
 
 
