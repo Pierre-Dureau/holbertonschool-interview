@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Module 0-count
-"""
+"""Module to count the occurrences of words in the titles of hot posts"""
 import requests
 
 
@@ -30,7 +28,8 @@ def count_words(subreddit, word_list, count={}, after=None):
         if 'after' in data and data.get("after"):
             return count_words(subreddit, word_list, count, data.get("after"))
 
-        count = dict(sorted(count.items(), key=lambda item: item[1], reverse=True))
+        count = dict(sorted(count.items(), key=lambda item: item[1],
+                            reverse=True))
         for key, value in count.items():
             print(f"{key}: {value}")
     else:
