@@ -12,4 +12,4 @@ def rotate_2d_matrix(matrix):
         for j in range(len(matrix[i])):
             matrix_copy[j][length] = matrix[i][j]
         length -= 1
-    print(matrix_copy)
+    matrix = matrix_copy
