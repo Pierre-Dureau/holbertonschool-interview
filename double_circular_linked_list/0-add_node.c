@@ -24,7 +24,7 @@ List *create_node(char *str)
 	new->next = NULL;
 	new->str = strdup(str);
 
-	return (new);
+	return (new->str ? new : NULL);
 }
 
 /**
