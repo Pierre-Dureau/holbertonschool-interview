@@ -6,6 +6,8 @@
  *
  * @array: The array
  * @size: Size of the array
+ *
+ * Return: number of unit
 */
 int get_max(int *array, size_t size)
 {
@@ -78,5 +80,5 @@ void radix_sort(int *array, size_t size)
 		copy_array(array, new_array, size);
 		print_array(array, size);
 	}
-	free (new_array);
+	free(new_array);
 }
