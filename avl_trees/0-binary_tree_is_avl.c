@@ -14,8 +14,8 @@ int _height(const binary_tree_t *tree)
 	if (!tree)
 		return (0);
 
-	l = height_recursion(tree->left) + 1;
-	r = height_recursion(tree->right) + 1;
+	l = _height(tree->left) + 1;
+	r = _height(tree->right) + 1;
 
 	return (l > r ? l : r);
 }
