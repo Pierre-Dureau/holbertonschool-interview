@@ -11,7 +11,7 @@ def isWinner(x, nums):
         turn = 0
         tab = [j for j in range(1, nums[i] + 1)]
 
-        while (len(tab) != 1):
+        while (len(tab) > 1):
             choice = tab[1]
             temp = []
             for k in tab:
@@ -25,4 +25,7 @@ def isWinner(x, nums):
         else:
             maria += 1
 
-    return "Ben" if ben > maria else "Maria"
+    if ben > maria:
+        return "Ben"
+    if ben < maria:
+        return "Maria"
