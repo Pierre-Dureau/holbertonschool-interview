@@ -10,13 +10,12 @@ def isWinner(x, nums):
     for i in range(0, x):
         turn = 0
         tab = [j for j in range(1, nums[i] + 1)]
-
         while (len(tab) > 1):
             choice = tab[1]
             temp = []
-            for k in tab:
-                if (k % choice == 0):
-                    temp.append(k)
+            for t in tab:
+                if (t % choice != 0):
+                    temp.append(t)
             tab = temp
             turn += 1
 
